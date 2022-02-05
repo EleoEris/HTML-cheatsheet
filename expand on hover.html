@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Expand on hover</title>
+</head>
+<body>
+
+  <div class="container">
+  
+    <h1>Hover on the container!</h1>
+
+    <ul>
+      <li>first element</li>
+      <li>element in position 2</li>
+      <li>3rd element</li>
+    </ul>
+  
+  </div>
+
+</body>
+</html>
+
+<style>
+.container {
+  background-color: cyan;
+  border: 2px #f00 solid;
+}
+
+.container ul {
+  margin: 0;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 1s ease-in;
+}
+
+/* 
+  IMPORTANT: the transition begins from max-height, not the actual (auto) height. 
+  The part of the transition in which max-height > auto height is invisible but will still take time.
+  It's best if max-height is minimally higher than the actual height.
+*/
+.container:hover ul {
+  max-height: 100px;
+  transition: max-height 1s ease-in;
+}
+</style>
+  
